@@ -1,0 +1,2 @@
+- [Formalizing the infinite-categorical Yoneda Lemma](https://dl.acm.org/doi/10.1145/3636501.3636945)
+- [A type theory for synthetic infinite categories](https://arxiv.org/abs/1705.07442)
