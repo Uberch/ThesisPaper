@@ -19,14 +19,12 @@ Option 2
 Option 3
 : This thesis provides Rzk language server with implementation for bufferization and handling several LSP requests, specifically `didOpen`, `didChange`, `didClose` and `didSave`. This allows language server to keep track of unsaved changes and deliver real-time diagnostics without need to save the file.
 
-## Preliminary list of literature
+## Links
 
-[References](./reference.md)
+- [Preliminary list of literature][1]
+- [Github repo with codebase][2]
+- [Github repo with thesis-related docs][3]
 
-## Github repo for code
-
-[Repo](https://github.com/Uberch/rzk)
-
-## Github repo for thesis text
-
-[Repo](https://github.com/Uberch/ThesisPaper)
+[1]: ./references.md "References"
+[2]: https://github.com/Uberch/rzk "Rzk"
+[3]: https://github.com/Uberch/ThesisPaper "Thesis dosc"
