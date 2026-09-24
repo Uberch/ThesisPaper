@@ -4,10 +4,10 @@ Definitely will be used:
 - For referencing exact API: [LSP specification][2]
 - For implementation: [Haskell LSP package docs][3]
 - For upgrading VSCode client: [VS Code - LSP extension Guide][4]
-- [In proceeding of previous point][6]
-- [Impact of LSP on Textual DSL`s][7]
 - Already checked for potential literature references:
     - For better understanding: [Implementation Practices in LSP][5]
+    - [Survey in proceeding of previous point][6]
+    - [Impact of LSP on Textual DSL`s][7]
 
 Potentially can be used:
 - [Formalizing the infinite-categorical Yoneda Lemma](https://dl.acm.org/doi/10.1145/3636501.3636945)
@@ -30,9 +30,20 @@ Will explore and filter:
 - [GeoScenario: An Open DSL for Autonomous Driving Scenario Representation](https://ieeexplore.ieee.org/document/8814107)
 - [Language-independent development environment support for dynamic runtimes](https://dl.acm.org/doi/10.1145/3359619.3359746)
 - [Langserver.org: A community-driven source of knowledge for Language Server Protocol implementations](https://langserver.org/)
-- [Notable Design Patterns for Domain-specific Languages](https://www.sciencedirect.com/science/article/abs/pii/S0164121200000893?via%3Dihub)
+- [Notable Design Patterns for Domain-specific Languages](https://dl.acm.org/doi/10.1016/S0164-1212(00)00089-3)
 - [DSL Engineering](http://voelter.de/data/books/markusvoelter-dslengineering-1.0.pdf)
 - [Efficient development of consistent projectional editors using grammar cells](https://dl.acm.org/doi/10.1145/2997364.2997365)
+
+- [On the Suitability of LSP and DAP for Domain-Specific Languages](https://dl.acm.org/doi/10.1109/MODELS-C59198.2023.00066)
+- [Recommended Steps for Thematic Synthesis in Software Engineering](https://www.researchgate.net/publication/224266207_Recommended_Steps_for_Thematic_Synthesis_in_Software_Engineering)
+- [Taming Multi-Variablity of Software Product Line Transformations](https://www.researchgate.net/publication/324205245_Taming_Multi-Variability_of_Software_Product_Line_Transformations)
+- [Software development with feature toggles: prctices used by practitioners](https://dl.acm.org/doi/abs/10.1007/s10664-020-09901-z)
+- [Designing a Test Model for a configurable System: An Exploratory Study of Preprocessor Directives and Feature Toggles](https://dl.acm.org/doi/10.1145/3571788.3571795)
+- [Exploring differences and commonalities between feature flags and configuration options](https://dl.acm.org/doi/10.1145/3377813.3381366)
+- [Towards system analysis with variability model metrics](https://dl.acm.org/doi/10.1145/2556624.2556641)
+- [A Common Notation and Tool Support for Embedded Feature Annotations](https://dl.acm.org/doi/10.1145/3382026.3431253)
+- [SPL: Software product lines extraction dricen by LSP](https://www.sciencedirect.com/science/article/pii/S0164121223002042?via%3Dihub)
+- [Code Less to Code More: Streamlining LSP and type system development for language families](https://www.sciencedirect.com/science/article/pii/S0164121225002237)
 
 
 [1]: https://github.com/rzk-lang/rzk "Official Rzk compiler codebase"
