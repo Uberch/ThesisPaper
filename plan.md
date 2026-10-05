@@ -1,10 +1,13 @@
 ## Tasks
 
-1. Track unsaved document buffers in server state.
-2. Improve cache invalidation so changed files reliably clear stale diagnostics/results.
-3. Implement meaningful didOpen, didChange, didClose, didSave.
-4. Make parsing, diagnostics, semantic tokens, hover/reference index use the latest editor buffer where available.
-5. Evaluate latency, correctness, and user experience before/after.
+- Make Typecheck VFS-aware
+- Decide dependency graphing and respective cache invalidation
+- Decide on debouncing policy
+
+## Checkable propositions
+
+- Latency with 
+
 
 ## Plan
 
