@@ -1,0 +1,224 @@
+@yonedalemma{10.1145/3636501.3636945,
+    author = {Kudasov, Nikolai and Riehl, Emily and Weinberger, Jonathan},
+    title = {Formalizing the ∞-Categorical Yoneda Lemma},
+    year = {2024},
+    isbn = {9798400704888},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3636501.3636945},
+    doi = {10.1145/3636501.3636945},
+    abstract = {Formalized 1-category theory forms a core component of various libraries of mathematical proofs. However, more sophisticated results in fields from algebraic topology to theoretical physics, where objects have “higher structure,” rely on infinite-dimensional categories in place of 1-dimensional categories, and ∞-category theory has thusfar proved unamenable to computer formalization. 	Using a new proof assistant called Rzk, which is designed to support Riehl–Shulman’s simplicial extension of homotopy type theory for synthetic ∞-category theory, we provide the first formalizations of results from ∞-category theory. This includes in particular a formalization of the Yoneda lemma, often regarded as the fundamental theorem of category theory, a theorem which roughly states that an object of a given category is determined by its relationship to all of the other objects of the category. A key feature of our framework is that, thanks to the synthetic theory, many constructions are automatically natural or functorial. We plan to use Rzk to formalize further results from ∞-category theory, such as the theory of limits and colimits and adjunctions.},
+    booktitle = {Proceedings of the 13th ACM SIGPLAN International Conference on Certified  Programs and Proofs},
+    pages = {274–290},
+    numpages = {17},
+    keywords = {Yoneda lemma, category theory, directed type theory, fibrations, formalization, homotopy type theory, ∞-category theory},
+    location = {London, UK},
+    series = {CPP 2024}
+}
+
+@typetheorinfsyntcat{riehl2023typetheorysyntheticinftycategories,
+    title={A type theory for synthetic $\infty$-categories}, 
+    author={Emily Riehl and Michael Shulman},
+    year={2023},
+    eprint={1705.07442},
+    archivePrefix={arXiv},
+    primaryClass={math.CT},
+    url={https://arxiv.org/abs/1705.07442}, 
+}
+
+@e-unification{https://doi.org/10.4230/lipics.fscd.2023.10,
+  doi = {10.4230/LIPICS.FSCD.2023.10},
+  url = {https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.FSCD.2023.10},
+  author = {Kudasov, Nikolai},
+  keywords = {E-unification, higher-order unification, second-order abstract syntax, Theory of computation → Equational logic and rewriting},
+  language = {en},
+  title = {E-Unification for Second-Order Abstract Syntax},
+  journal = {LIPIcs, Volume 260, FSCD 2023},
+  volume = {260},
+  pages = {10:1-10:22},
+  publisher = {Schloss Dagstuhl – Leibniz-Zentrum für Informatik},
+  year = {2023},
+  copyright = {Creative Commons Attribution 4.0 International license}
+}
+
+@codebase{rzkcompilercodebase,
+    author = {Kudasov, Nikolai},
+    title = {Rzk proof assistant},
+    year = {2026},
+    url = {https://github.com/rzk-lang/rzk},
+}
+
+@lspspec{lspspecification,
+    author = {Corporation, Microsoft},
+    title = {Language Server Protocol Specification},
+    year = {2026},
+    url = {https://microsoft.github.io/language-server-protocol/specifications/lsp/3.18/specification/},
+}
+
+@haskspec{haskelllibspecification,
+    author = {Zimmerman, Alan},
+    title = {lsp: Haskell library for the Microsoft Language Server Protocol},
+    year = {2024},
+    url = {https://hackage-content.haskell.org/package/lsp-2.7.0.0/docs/Language-LSP-Server.html},
+}
+
+@lspimplpractices{10.1145/3550355.3552452,
+    author = {Barros, Djonathan and Peldszus, Sven and Assun{\c c}{\~a}o, Wesley K. G. and Berger, Thorsten},
+    title = {Editing support for software languages: implementation practices in language server protocols},
+    year = {2022},
+    isbn = {9781450394666},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3550355.3552452},
+    doi = {10.1145/3550355.3552452},
+    abstract = {Effectively using software languages, be it programming or domain-specific languages, requires effective editing support. Modern IDEs, modeling tools, and code editors typically provide sophisticated support to create, comprehend, or modify instances---programs or models---of particular languages. Unfortunately, building such editing support is challenging. While the engineering of languages is well understood and supported by modern model-driven techniques, there is a lack of engineering principles and best practices for realizing their editing support. Especially domain-specific languages---often created by smaller organizations or individual developers, sometimes even for single projects---would benefit from better methods and tools to create proper editing support.We study practices for implementing editing support in 30 so-called language servers---implementations of the language server protocol (LSP). The latter is a recent de facto standard to realize editing support for languages, separated from the editing tools (e.g., IDEs or modeling tools), enhancing the reusability and quality of the editing support. Witnessing the LSP's popularity---a whopping 121 language servers are in existence today---we take this opportunity to analyze the implementations of 30 language servers, some of which support multiple languages. We identify concerns that developers need to take into account when developing editing support, and we synthesize implementation practices to address them, based on a systematic analysis of the servers' source code. We hope that our results shed light on an important technology for software language engineering, that facilitates language-oriented programming and systems development, including model-driven engineering.},
+    booktitle = {Proceedings of the 25th International Conference on Model Driven Engineering Languages and Systems},
+    pages = {232–243},
+    numpages = {12},
+    keywords = {code assistance, implementation practices, language engineering, source code editor},
+    location = {Montreal, Quebec, Canada},
+    series = {MODELS '22}
+}
+
+@editsupp{effectiveeditingsupportforlanguages,
+    author = {Peldsuz, Sven and Barros, Djonathan and Fischer, Dennis and Assun{\c c}{\~a}o, Wesley K. G. and Berger, Thorsten},
+    title = {Effective Editing Support for Languages: A Perspective from the Language Server Protocol},
+    year = {2026},
+    url = {https://www.researchgate.net/profile/Thorsten-Berger-2/publication/398933982_Effective_Editing_Support_for_Languages_A_Perspective_from_the_Language_Server_Protocol/links/69486b6b06a9ab54f848f559/Effective-Editing-Support-for-Languages-A-Perspective-from-the-Language-Server-Protocol.pdf},
+}
+
+@decoupllangedit{decouplinglanguageandeditor,
+    author = {Bilnder, Hendrik},
+    title = {Decoupling Language and Editor - The Impact of the Language Server
+Protocol on Textual Domain-Specific Languages},
+    year = {2019},
+    url = {https://pdfs.semanticscholar.org/8526/1fa85335a396934ddf20277fb85fc3bd309d.pdf},
+}
+
+@heartlsp{heartoflangserver,
+    title = {The Heart of a Language Server},
+    year = {2023},
+    url = {https://rust-analyzer.github.io/blog/2023/12/26/the-heart-of-a-language-server.html},
+}
+
+@bsalacarte{10.1145/3236774,
+    author = {Mokhov, Andrey and Mitchell, Neil and Peyton Jones, Simon},
+    title = {Build systems {\`a} la carte},
+    year = {2018},
+    issue_date = {September 2018},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {2},
+    number = {ICFP},
+    url = {https://doi.org/10.1145/3236774},
+    doi = {10.1145/3236774},
+    abstract = {Build systems are awesome, terrifying -- and unloved. They are used by every developer around the world, but are rarely the object of study. In this paper we offer a systematic, and executable, framework for developing and comparing build systems, viewing them as related points in landscape rather than as isolated phenomena. By teasing apart existing build systems, we can recombine their components, allowing us to prototype new build systems with desired properties.},
+    journal = {Proc. ACM Program. Lang.},
+    month = jul,
+    articleno = {79},
+    numpages = {29},
+    keywords = {algorithms, build systems, functional programming}
+}
+
+@adapton{10.1145/2666356.2594324,
+    author = {Hammer, Matthew A. and Phang, Khoo Yit and Hicks, Michael and Foster, Jeffrey S.},
+    title = {Adapton: composable, demand-driven incremental computation},
+    year = {2014},
+    issue_date = {June 2014},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {49},
+    number = {6},
+    issn = {0362-1340},
+    url = {https://doi.org/10.1145/2666356.2594324},
+    doi = {10.1145/2666356.2594324},
+    abstract = {Many researchers have proposed programming languages that support incremental   computation (IC), which allows programs to be efficiently re-executed after a small change to the input. However, existing implementations of such languages have two important drawbacks. First, recomputation is oblivious to specific demands on the program output; that is, if a program input changes, all dependencies will be recomputed, even if an observer no longer requires certain outputs. Second, programs are made incremental as a unit, with little or no support for reusing results outside of their original context, e.g., when reordered.To address these problems, we present λiccdd, a core calculus that applies a demand-driven semantics to incremental computation, tracking changes in a hierarchical fashion in a novel demanded computation graph. λiccdd also formalizes an explicit separation between inner, incremental computations and outer observers. This combination ensures λiccdd programs only recompute computations as demanded by observers, and allows inner computations to be reused more liberally. We present Adapton, an OCaml library implementing λiccdd. We evaluated Adapton on a range of benchmarks, and found that it provides reliable speedups, and in many cases dramatically outperforms state-of-the-art IC approaches.},
+    journal = {SIGPLAN Not.},
+    month = jun,
+    pages = {156–166},
+    numpages = {11},
+    keywords = {call-by-push-value (CBPV), demanded computation graph (DCG) incremental computation, laziness, self-adjusting computation, thunks}
+}
+
+@respcomp{a,
+    author = {Matsakis, Nicholas},
+    title = {Responsive Compilers},
+    year = {2019},
+    url = {https://nikomatsakis.github.io/pliss-2019/responsive-compilers.html#1},
+}
+
+@isabelle{asynchronoususerinteractionandtoolintegrationinisablle/pide,
+    author = {Wenzel, Makarius},
+    title = {Asynchronous User Interaction and
+Tool Integration in Isabelle/PIDE},
+    year = {2014},
+    url = {https://www.cs.uwyo.edu/~ruben/itp-2014/uploads/Main/itp-wenkel.pdf},
+}
+
+@asynccoq{barras2015asynchronousprocessingcoqdocuments,
+      title={Asynchronous processing of Coq documents: from the kernel up to the user interface}, 
+      author={Bruno Barras and Carst Tankink and Enrico Tassi},
+      year={2015},
+      eprint={1506.05605},
+      archivePrefix={arXiv},
+      primaryClass={cs.LO},
+      url={https://arxiv.org/abs/1506.05605}, 
+}
+
+@coqlsp{coq-lsp,
+    title = {Coq-lsp},
+    url = {https://ocaml.org/p/coq-lsp/0.1.2%2Bv8.16/doc/README.html},
+    
+}
+
+@exttpfront{Ullrich2023_1000161074,
+    author = {Ullrich, Sebastian Andreas},
+    year = {2023},
+    title = {An Extensible Theorem Proving Frontend},
+    doi = {10.5445/IR/1000161074},
+    publisher = {{Karlsruher Institut f{\"{u}}r Technologie (KIT)}},
+    keywords = {interactive theorem proving, Lean, macros, functional programming},
+    pagetotal = {243},
+    school = {Karlsruher Institut für Technologie (KIT)},
+    language = {english}
+}
+
+@article{10.1145/2858965.2814277,
+    author = {Erdweg, Sebastian and Bra{\v c}evac, Oliver and Kuci, Edlira and Krebs, Matthias and Mezini, Mira},
+    title = {A co-contextual formulation of type rules and its application to incremental type checking},
+    year = {2015},
+    issue_date = {October 2015},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {50},
+    number = {10},
+    issn = {0362-1340},
+    url = {https://doi.org/10.1145/2858965.2814277},
+    doi = {10.1145/2858965.2814277},
+    abstract = {Type rules associate types to expressions given a typing context. As the type checker traverses the expression tree top-down, it extends the typing context with additional context information that becomes available. This way, the typing context coordinates type checking in otherwise independent subexpressions, which inhibits parallelization and incrementalization of type checking. We propose a co-contextual formulation of type rules that only take an expression as input and produce a type and a set of context requirements. Co-contextual type checkers traverse an expression tree bottom-up and merge context requirements of independently checked subexpressions. We describe a method for systematically constructing a co-contextual formulation of type rules from a regular context-based formulation and we show how co-contextual type rules give rise to incremental type checking. Using our method, we derive incremental type checkers for PCF and for extensions that introduce records, parametric polymorphism, and subtyping. Our performance evaluation shows that co-contextual type checking has performance comparable to standard context-based type checking, and incrementalization can improve performance significantly.},
+    journal = {SIGPLAN Not.},
+    month = oct,
+    pages = {880–897},
+    numpages = {18},
+    keywords = {co- contextual, constraints, incremental, tree folding, type checking, type inference}
+}
+
+@article{10.1145/1297105.1297033,
+    author = {Georges, Andy and Buytaert, Dries and Eeckhout, Lieven},
+    title = {Statistically rigorous java performance evaluation},
+    year = {2007},
+    issue_date = {October 2007},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {42},
+    number = {10},
+    issn = {0362-1340},
+    url = {https://doi.org/10.1145/1297105.1297033},
+    doi = {10.1145/1297105.1297033},
+    abstract = {Java performance is far from being trivial to benchmark because it is affected by various factors such as the Java application, its input, the virtual machine, the garbage collector, the heap size, etc. In addition, non-determinism at run-time causes the execution time of a Java program to differ from run to run. There are a number of sources of non-determinism such as Just-In-Time (JIT) compilation and optimization in the virtual machine (VM) driven by timer-based method sampling, thread scheduling, garbage collection, and various.There exist a wide variety of Java performance evaluation methodologies usedby researchers and benchmarkers. These methodologies differ from each other in a number of ways. Some report average performance over a number of runs of the same experiment; others report the best or second best performance observed; yet others report the worst. Some iterate the benchmark multiple times within a single VM invocation; others consider multiple VM invocations and iterate a single benchmark execution; yet others consider multiple VM invocations and iterate the benchmark multiple times.This paper shows that prevalent methodologies can be misleading, and can even lead to incorrect conclusions. The reason is that the data analysis is not statistically rigorous. In this paper, we present a survey of existing Java performance evaluation methodologies and discuss the importance of statistically rigorous data analysis for dealing with non-determinism. We advocate approaches to quantify startup as well as steady-state performance, and, in addition, we provide the JavaStats software to automatically obtain performance numbers in a rigorous manner. Although this paper focuses on Java performance evaluation, many of the issues addressed in this paper also apply to other programming languages and systems that build on a managed runtime system.},
+    journal = {SIGPLAN Not.},
+    month = oct,
+    pages = {57–76},
+    numpages = {20},
+    keywords = {statistics, methodology, java, data analysis, benchmarking}
+}
