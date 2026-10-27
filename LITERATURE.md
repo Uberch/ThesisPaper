@@ -18,7 +18,7 @@
 
 ## Advised by professor
 - [Build systems a la carte](https://dl.acm.org/doi/10.1145/3236774)
-- [Adapton: Composable, Demand-Driven Incremental Computation](https://adapton.org/)
+- [Adapton: Composable, Demand-Driven Incremental Computation](https://dl.acm.org/doi/10.1145/2594291.2594324)
 - [Responsive Compilers](https://github.com/nikomatsakis/pliss-2019)
 - [Asynchronouse User Interaction and Tool Integration in Isabelle/PIDE](https://www.cs.uwyo.edu/~ruben/itp-2014/uploads/Main/itp-wenkel.pdf)
 - [Asynchronous processing of Coq documents: from the kernel up to the user interface](https://arxiv.org/abs/1506.05605)

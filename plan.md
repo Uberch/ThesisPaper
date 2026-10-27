@@ -10,15 +10,10 @@
 
 
 ## Plan
-
-Work | Outcome
----|---
-Study current LSP server, cache model, VFS behavior | Architecture writeup and baseline measurements
-Implement didSave | Diagnostics update when user save file
-Implement buffer and its functionality | Server can work with unsaved changes
-Implement didOpen/Change/Close | Server can receive unsaved text and work around it
-Make parse/reference/semantic/diagnostic paths consistently use buffer text | No stale navigation/highlighting for open files
-Evaluation/demo | Before/after scenarios, latency numbers, screenshots/GIFs
+1. Make typechecking aware of unsaved changes
+2. Decide policy for on-edit project evaluation and implement it
+3. Design and implement project-level module dependency graph and cache invalidation
+4. Testing and Evaluation
 
 ## Showable demo scenarios:
 
