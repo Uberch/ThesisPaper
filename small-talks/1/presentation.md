@@ -1,25 +1,27 @@
 ---
+marp: true
 theme: gaia
 paginate: true
 _paginate: false
 footer: "Innopolis University, 2026"
-
 title: "Thesis small talk presentation"
 author: "Vyacheslav Molchanov, BS23-SD-02"
 description: ""
-
-section {
-    font-size: 14px;
-}
-
 ---
+
+<style>
+section {
+    font-size: 80%;
+}
+</style>
+
 # Improving interactivity and consistency of the Rzk Language Server through on-edit reevaluation.
 Author: Vyacheslav Molchanov, BS23-SD-02
 Supervisor: Nikolai Kudasov
 
 ---
 # Rzk
-Rzk is a proof assistant based on Riehl and Shulman's type theory [1] with shapes.
+Rzk is an interactive theorem prover (ITP) based on Riehl and Shulman's type theory [1] with shapes.
 It is used in some leading math formalization works:
 - Formalizing the Infinite-Categorical Yoneda Lemma [2]
 - Simplicial HoTT and synthetic infinite-categories [3]
@@ -38,7 +40,10 @@ Rzk projects are structured around a main 'rzk.yaml' file, which defines a flat 
 
 ---
 # Problem statement
-**Goal:** Improve project-level cache invalidation, make typechecker aware of unsaved changes in IDE and add on-edit evaluation.
+**Goal:** Improve user expirience through shortening and automating feedback loop.
+
+**Contributions:** Improve project-level cache invalidation, make typechecker aware of unsaved changes in IDE and add edit-trigerred evaluation.
+
 **Evaluation criteria:**
 - Typechecking is correct if its result for buffered changes are the same as for 'cold' typechecking from disk.
 - Latency for typechecking on large projects should be significantly lower for changes in early modules of 'rzk.yaml' and nearly same for later ones, compared to current Rzk version.
@@ -52,7 +57,7 @@ Rzk projects are structured around a main 'rzk.yaml' file, which defines a flat 
 
 ---
 # State of the Art: `Lean.Server`
-- Lean is a functional programming language and theorem prover built for formalizing mathematics and for formal verification.
+- Lean is a functional programming language and theorem prover built for formalizing mathematics.
 - File-wise: directed acyclic graph (DAG). Invalidates only changed declaration and its dependencies.
 - Project-wise: compiled module cache.
 Only open files and files imported by them are evaluated.
@@ -80,3 +85,7 @@ Invalidation is implemented by monitoring compiled `.vo` files for each module; 
 1. [A type theory for synthetic ∞-categories](https://arxiv.org/abs/1705.07442)
 2. [Formalizing the Infinite-Categorical Yoneda Lemma](https://dl.acm.org/doi/10.1145/3636501.3636945)
 3. [Simplicial HoTT and synthetic ∞-categories](https://rzk-lang.github.io/sHoTT/)
+
+---
+# Thank you for attention
+---
