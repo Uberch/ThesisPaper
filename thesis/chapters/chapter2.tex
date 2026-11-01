@@ -1,0 +1,124 @@
+\chapter{Literature Review}
+\label{chap:lr}
+\chaptermark{Second Chapter Heading}
+
+\section{Language Server Protocol}
+\label{lr:lsp}
+
+The Language Server Protocol developed by Microsoft\cite{lspspecification},
+has profoundly influenced the development of both domain-specific languages\footnote{Commonly abbreviated as DSLs}
+and integrated development environments by decoupling them via a standardized set of requests.
+Consequently, DSL developers no longer need to implement and maintain language-specific logic for each supported IDE;
+conversely, IDE integration requires significantly less effort by leveraging these standardized API calls.
+
+After studying the impact of LSP in \cite{lspimpact}, Hendrik B{\"u}ender concludes that
+the introduction of the protocol not only substantially reduced development effort,
+but also defined \enquote{minimum feature set that should be supported by any DSL editor}
+and even enabled the complete omission of local IDE installation in certain scenarios.
+
+\section{Rzk}
+\label{lr:rzk}
+
+Rzk is the interactive theorem prover developed \enquote{with the idea of bringing Riehl and Shulman's
+paper\cite{riehl2023typetheorysyntheticinftycategories} to life by implementing a proof assistant
+based on their type thory with shapes}, as stated in its official GitHub repository\cite{rzkcompilercodebase}.
+
+It has already been utilized in several mathematical formalization projects:
+\begin{itemize}
+	\item Formalizing the $\infty$-Categorical Yoneda Lemma \cite{yonedalemma}
+	\item Simplicial HoTT and synthetic $\infty$-categories \cite{shott}
+\end{itemize}
+
+\section{Typechecker as a Build System}
+\label{lr:buildsys}
+
+In \cite{lacarte}, Mokhov et al. propose a systematic framework for developing build systems.
+This framework conceptualizes a build system as two architectural components:
+a \enquote{Scheduler}, handles task scheduling in dependency order,
+and a \enquote{Rebuilder}, which determines whether a task requires re-execution.
+
+The Rzk language server compiles a project into a collection of diagnostics (errors and warnings),
+storing an intermediate representation that contains declarations and diagnostics for each module.
+By treating project files as \enquote{inputs}, module caches as \enquote{outputs},
+and the typechecking process itself as the primary task,
+the aforementioned framework can be leveraged to develop an incremental build system.
+This approach eliminates repetitive checking of unmodified code,
+thereby lowering latency under specific conditions.
+
+Other notable frameworks exist within the domain of incremental computation systems:
+\begin{itemize}
+	\item In \cite{adapton}, Hammer et al. build upon the concept of \enquote{demanded computations graph}
+	to present theoretical \enquote{core calculus that applies a demand-driven semantics to incremental computation},
+	implementing this calculus as an OCaml library named Adapton.
+	\item The rust-analyzer team developed Salsa\cite{salsa}, a Rust framework
+	that utilizes a similar incremental, demand-driven computation.
+\end{itemize}
+
+Despite both framework introducing powerful paradigms for implementing incremental computation,
+they are fundamentally based on the demand-driven paradigm\cite{reportonsalsaadapton}.
+This contrasts with Rzk, which enforces a strict project structure and requires full compilation.
+Furthermore, it is noteworthy that both Rzk and framework presented in \cite{lacarte} are implemented in Haskell,
+whereas Adapton is an OCaml library and Salsa is written in Rust.
+
+In conclusion, the build system framework proposed by Mokhov et al.
+is more aligned with the objectives of this thesis,
+though specific architectural details from Adapton and Salsa may still influence the final implementation.
+
+\section{Document processing in various ITPs}
+\label{lr:itps}
+
+\subsection{Roqc}
+
+Roqc Prover (formerly known as Coq) is an interactive theorem prover
+based on the Calculus of Inductive Constructions.
+
+Prior to the introduction of the LSP, Roqc utilized a proprietary implementation of
+asynchronous document processing, as described in \cite{barras2015asynchronousprocessingcoqdocuments}.
+That work demonstrates significant latency reduction both during
+the batch compilation of entire project and during on-edit evaluation within CoqIDE.
+However, that approach focuses on parallel and asyncronous processing
+of independent documents rather than on incremental computation of unified project.
+
+As noted in its package documentation\cite{coq-lsp}, the Rocq LSP server (coq-lsp)
+compiles code incrementally and continuously validates documents as user edits arrive.
+
+Rocq compiles its '.v' source code files into '.vo' object files.
+Because the feedback loop in IDE is based on importing these pre-compiled object files,
+the process inherently exhibits incremental characteristics.
+
+% \subsection{Lean4}
+%
+% Lean is a functional programming language, theorem prover, and a metaprogramming environment.
+% Its language server re-evaluates code upon each keystroke,
+% cacheing both individual declarations within a file and the compiled states of individual modules.
+%
+% \subsection{Agda}
+%
+% Agda is a dependently typed programming language and an extension of Martin-Löf’s type theory.
+% It evaluates only when a file is saved or when an evaluation is manually requested.
+% While Agda caches compilation results at the file level, any subsequent modification
+% to a file forces a complete re-evaluation of that entire file.
+%
+% \subsection{Rzk}
+%
+% \subsection{Improved Rzk}
+
+\subsection{Summary}
+To conclusde this section, the capabilities and behaviors
+of these varius environments are summarized in Table\ref{tab:feats}.
+\begin{table}[b]
+	\centering
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|c|c|}
+			\hline
+			Language server & Reevaluation trigger & Project-level cache & Cache structure \\ \hline
+			Rocq & Edit & Compiled modules & Module imports \\ \hline
+			% Lean4 & Edit & Compiled modules & DAG\tablefootnote{Directed acyclic graph} \\ \hline
+			% Agda & Request/save & Compiled modules & Module imports \\ \hline
+			% Rzk & Save & Typed module caches & Flat list \\ \hline
+			% Improved Rzk & Edit & Typed module caches & TBD \\ \hline
+		\end{tabular}
+	\end{center}
+	\caption{Caching and evaluation triggers in ITPs}
+	\label{tab:feats}
+\end{table}

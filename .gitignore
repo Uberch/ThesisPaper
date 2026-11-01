@@ -1,0 +1,10 @@
+*.aux
+thesis.bcf
+thesis.lof
+thesis.log
+thesis.lot
+thesis.out
+thesis.run.xml
+thesis.toc
+thesis.bbl
+thesis.blg

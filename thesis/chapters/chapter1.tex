@@ -1,0 +1,98 @@
+\chapter{Introduction}
+\label{chap:intro}
+\chaptermark{Optional running chapter heading}
+
+\section{Background}
+\label{intro:bgr}
+
+Interactive Theorem Provers\footnote{Commonly abbreviated as ITPs} are domain-specific languages
+designed for formalizing mathematics.
+They are essential for modern mathematics research,
+granting a near-absolute degree of certainty by verifying proofs via deterministic algorithms and
+managing extreme complexity by decomposing large-scale proofs into reusable components.
+Therefore, they are frequently utilized by mathematicians
+who may lack a comprohensive programming background to employ ITPs effectively.
+
+Integrated Development Environment\footnote{Commonly abbreviated as IDEs} integration with ITP
+represents a viable approach to addressing this challenge by
+equipping user with rapid, real-time code diagnostics, seamless code navigation,
+syntax highlighting, and other advanced features.
+
+\section{Research Gap}
+\label{intro:gap}
+
+Rzk is a theorem prover based on Riehl and Shulman's type theory\cite{riehl2023typetheorysyntheticinftycategories} with shapes.
+While its existing language server keeps track of unsaved changes,
+highlights syntax and enables navigation, it suffers from several limitations:
+proof evaluation is not automatically executed upon file modification,
+and large projects exhibit significant latency during evaluation
+when changes are introduced at the beginning of the codebase.
+
+\section{Approach}
+\label{intro:plan}
+
+To achieve these objectives, the research presented in this thesis is structured in several consecutive stages.
+
+Initially, the typechecker module of language server will be adapted
+to leverage unsaved changes from the IDE where possible, thereby providing relevant diagnostics.
+
+Subsequently, an edit-triggered evaluation policy will be introduced
+to deliver these diagnostics automatically without requiring explicit manual triggers.
+
+These enhancements establish the foundation for the core contribution of this thesis,
+enabling the evaluation of diagnostic delivery latencies
+within the current architecture of the Rzk LSP\footnote{Language Server Protocol} server.
+
+Following this, a build system incorporating module dependencies and cache invalidation
+will be designed and implemented to eliminate redundant type checking of unmodified code,
+thereby minimizing the latency of diagnostic delivery.
+
+
+\section{Contributions}
+\label{intro:contr}
+
+In summary, this thesis delivers several contributions that optimize IDE behavior as follows:
+\begin{itemize}
+	\item The language server provides relevant diagnostics for unsaved changes directly within the IDE.
+	In this context, "relevant diagnostics" implies that diagnostics for unsaved changes matches
+	the output of the Rzk typechecker executed on the corresponding source files on disk.
+	\item When user begins typing, outdated diagnostic messages are immediately suppresed.
+	Following a 500 ms timeout after the final keystroke, the language server triggers typecheck on the project,
+	presenting results as fresh dianostics.
+	This debouncing strategy allows language server to initiate computations promptly
+	while mitigating the overhead of repeatedly halting and restarting the checker during rapid continuous typing.
+	\item The language server minimizes computational overhead by avoiding repetitive execution on unchanged code.
+	When a user modifies a module, typecheckind is isolated to that specific module and
+	its downstream dependencies, rather than every subsequent file in the project hierarchy.
+	Although this optimization is less noticeable to the user, this strategy is expected
+	to substantially reduce re-evaluation latencies for large projects when early-stage files are modified,
+	while maintaining standard performance for changes made in later files.
+	For instance, the evaluated performance metrics of Rzk and its language server on
+	the simplicial HoTT formalization project (sHoTT)\cite{shott} -
+	which comprises 13 files with rzk code - are present in Table \ref{tab:perf}.
+\end{itemize}
+
+\begin{table}[b]
+	\centering
+	\begin{center}
+		\begin{tabular}{|c|c|c|c|}
+			\hline
+			& Whole project & 00-common.rzk.md & 13-truncation-levels \\ \hline
+			Rzk & 3000 & 200 & 300 \\ \hline
+			Current language server & 3000 & 3000 & 300 \\ \hline
+			Improved language server & 3000 & 200 & 300 \\ \hline
+		\end{tabular}
+	\end{center}
+	\caption{Evaluted diagnostic latency of Rzk, its current language server and its implementation proposed in this thesis on the sHoTT project (computation time in ms)}
+	\label{tab:perf}
+\end{table}
+
+\section{Paper Outline}
+\label{intro:outline}
+
+The remainder of this paper is structured as follows.
+Chapter 2 reviews Rzk, the LSP, and comparable solutions implemented in other ITPs.
+Chapter 3 describes the applied methodology.
+Chapter 4 documents the design and implementation aspects.
+Chapter 5 presents and analyzes the experimental results.
+Chapter 6 concludes the paper and summarizes the completed work.
